@@ -3,6 +3,33 @@ package com.company;
 public class IntArrayWorker
 {
   /** two dimensional matrix */
+  public int getCount(int a)
+  {
+    int count = 0;
+    for(int row = 0; row < matrix.length; row++)
+    for(int col = 0; col < matrix[0].length ; col++)
+    if(matrix[row][col] == a  )
+      count ++ ;
+
+    return count;
+  }
+  public int getColTotal(int b)
+  {
+    int total = 0;
+    for(int row = 0; row<matrix.length; row++)
+      total = total + matrix[row][b];
+    return total;
+  }
+
+  public int getLargest()
+  {
+    int largVal = 0;
+    for(int row=0; row<matrix.length; row++)
+      for(int column=0; column<matrix[0].length; column++)
+        if(matrix[row][column] > largVal)
+          largVal = matrix[row][column];
+    return largVal;}
+
   private int[][] matrix = null;
   
   /** set the matrix to the passed one
